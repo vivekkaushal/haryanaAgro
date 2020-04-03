@@ -1,0 +1,120 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-crop-procurement-pass-heading">Create or edit a Crop Procurement Pass</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_cropDate">Crop Date</label>
+                    <div class="d-flex">
+                        <input id="field_cropDate" type="datetime-local" class="form-control" name="cropDate" formControlName="cropDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_cropType">Crop Type</label>
+                    <select class="form-control" name="cropType" formControlName="cropType" id="field_cropType">
+                        <option value="Paddy">Paddy</option>
+                        <option value="MaizeOrCorn">MaizeOrCorn</option>
+                        <option value="JowarOrSorghum">JowarOrSorghum</option>
+                        <option value="Cotton">Cotton</option>
+                        <option value="Castor">Castor</option>
+                        <option value="Groundnut">Groundnut</option>
+                        <option value="Soyabean">Soyabean</option>
+                        <option value="RedGram">RedGram</option>
+                        <option value="GreenGram">GreenGram</option>
+                        <option value="BlackGram">BlackGram</option>
+                        <option value="Sesame">Sesame</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_expectedYeild">Expected Yeild</label>
+                    <input type="text" class="form-control" name="expectedYeild" id="field_expectedYeild"
+                           formControlName="expectedYeild"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_expectedYeildUnits">Expected Yeild Units</label>
+                    <select class="form-control" name="expectedYeildUnits" formControlName="expectedYeildUnits" id="field_expectedYeildUnits">
+                        <option value="Bag">Bag</option>
+                        <option value="Quintal">Quintal</option>
+                        <option value="Ton">Ton</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_procurementDate">Procurement Date</label>
+                    <div class="d-flex">
+                        <input id="field_procurementDate" type="datetime-local" class="form-control" name="procurementDate" formControlName="procurementDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_passStatus">Pass Status</label>
+                    <select class="form-control" name="passStatus" formControlName="passStatus" id="field_passStatus">
+                        <option value="Approved">Approved</option>
+                        <option value="Pending">Pending</option>
+                        <option value="Declined">Declined</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_createdAt">Created At</label>
+                    <div class="d-flex">
+                        <input id="field_createdAt" type="datetime-local" class="form-control" name="createdAt" formControlName="createdAt" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_modifiedAt">Modified At</label>
+                    <div class="d-flex">
+                        <input id="field_modifiedAt" type="datetime-local" class="form-control" name="modifiedAt" formControlName="modifiedAt" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_procurementCenter">Procurement Center</label>
+                    <select class="form-control" id="field_procurementCenter" name="procurementCenter" formControlName="procurementCenterId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="procurementCenterOption.id" *ngFor="let procurementCenterOption of procurementcenters; trackBy: trackProcurementCenterById">{{procurementCenterOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_farmer">Farmer</label>
+                    <select class="form-control" id="field_farmer" name="farmer" formControlName="farmerId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="farmerOption.id" *ngFor="let farmerOption of farmers; trackBy: trackFarmerById">{{farmerOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_passApprovedBy">Pass Approved By</label>
+                    <select class="form-control" id="field_passApprovedBy" name="passApprovedBy" formControlName="passApprovedById">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="employeeOption.id" *ngFor="let employeeOption of employees; trackBy: trackEmployeeById">{{employeeOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_createdBy">Created By</label>
+                    <select class="form-control" id="field_createdBy" name="createdBy" formControlName="createdById">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="employeeOption.id" *ngFor="let employeeOption of employees; trackBy: trackEmployeeById">{{employeeOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_modifiedBy">Modified By</label>
+                    <select class="form-control" id="field_modifiedBy" name="modifiedBy" formControlName="modifiedById">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="employeeOption.id" *ngFor="let employeeOption of employees; trackBy: trackEmployeeById">{{employeeOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

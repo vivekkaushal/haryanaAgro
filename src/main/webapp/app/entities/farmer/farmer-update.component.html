@@ -1,0 +1,159 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-farmer-heading">Create or edit a Farmer</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_title">Title</label>
+                    <select class="form-control" name="title" formControlName="title" id="field_title">
+                        <option value="Mr">Mr</option>
+                        <option value="Mrs">Mrs</option>
+                        <option value="Shri">Shri</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_name">Name</label>
+                    <input type="text" class="form-control" name="name" id="field_name"
+                           formControlName="name"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_gender">Gender</label>
+                    <select class="form-control" name="gender" formControlName="gender" id="field_gender">
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Others">Others</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_farmerType">Farmer Type</label>
+                    <select class="form-control" name="farmerType" formControlName="farmerType" id="field_farmerType">
+                        <option value="Lease">Lease</option>
+                        <option value="Self">Self</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_adhaarNumber">Adhaar Number</label>
+                    <input type="text" class="form-control" name="adhaarNumber" id="field_adhaarNumber"
+                           formControlName="adhaarNumber"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_pan">Pan</label>
+                    <input type="text" class="form-control" name="pan" id="field_pan"
+                           formControlName="pan"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_phoneNumber">Phone Number</label>
+                    <input type="text" class="form-control" name="phoneNumber" id="field_phoneNumber"
+                           formControlName="phoneNumber"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_signiture">Signiture</label>
+                    <input type="text" class="form-control" name="signiture" id="field_signiture"
+                           formControlName="signiture"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_address">Address</label>
+                    <input type="text" class="form-control" name="address" id="field_address"
+                           formControlName="address"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_houseNumber">House Number</label>
+                    <input type="text" class="form-control" name="houseNumber" id="field_houseNumber"
+                           formControlName="houseNumber"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_street">Street</label>
+                    <input type="text" class="form-control" name="street" id="field_street"
+                           formControlName="street"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_landmark">Landmark</label>
+                    <input type="text" class="form-control" name="landmark" id="field_landmark"
+                           formControlName="landmark"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_village">Village</label>
+                    <input type="text" class="form-control" name="village" id="field_village"
+                           formControlName="village"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_tehsil">Tehsil</label>
+                    <input type="text" class="form-control" name="tehsil" id="field_tehsil"
+                           formControlName="tehsil"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_district">District</label>
+                    <input type="text" class="form-control" name="district" id="field_district"
+                           formControlName="district"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_pincode">Pincode</label>
+                    <input type="text" class="form-control" name="pincode" id="field_pincode"
+                           formControlName="pincode"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_khataNumber">Khata Number</label>
+                    <input type="text" class="form-control" name="khataNumber" id="field_khataNumber"
+                           formControlName="khataNumber"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_surveyNumber">Survey Number</label>
+                    <input type="text" class="form-control" name="surveyNumber" id="field_surveyNumber"
+                           formControlName="surveyNumber"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_bankbookScanImageUrl">Bankbook Scan Image Url</label>
+                    <input type="text" class="form-control" name="bankbookScanImageUrl" id="field_bankbookScanImageUrl"
+                           formControlName="bankbookScanImageUrl"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_accountHolderNameAsPerBank">Account Holder Name As Per Bank</label>
+                    <input type="text" class="form-control" name="accountHolderNameAsPerBank" id="field_accountHolderNameAsPerBank"
+                           formControlName="accountHolderNameAsPerBank"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_accountNumber">Account Number</label>
+                    <input type="text" class="form-control" name="accountNumber" id="field_accountNumber"
+                           formControlName="accountNumber"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_ifsc">Ifsc</label>
+                    <input type="text" class="form-control" name="ifsc" id="field_ifsc"
+                           formControlName="ifsc"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_bankName">Bank Name</label>
+                    <input type="text" class="form-control" name="bankName" id="field_bankName"
+                           formControlName="bankName"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_branch">Branch</label>
+                    <input type="text" class="form-control" name="branch" id="field_branch"
+                           formControlName="branch"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_user">User</label>
+                    <select class="form-control" id="field_user" name="user" formControlName="userId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="userOption.id" *ngFor="let userOption of users; trackBy: trackUserById">{{userOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

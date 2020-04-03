@@ -1,0 +1,11 @@
+id;crop_date;crop_type;expected_yeild;expected_yeild_units;procurement_date;pass_status;created_at;modified_at
+1;2020-04-02T10:08:03;Paddy;Sports;Ton;2020-04-02T09:38:10;Pending;2020-04-03T00:18:40;2020-04-02T21:33:31
+2;2020-04-02T16:52:51;Groundnut;calculating conglomeration bypassing;Ton;2020-04-02T05:00:29;Declined;2020-04-02T05:28:45;2020-04-02T06:17:50
+3;2020-04-02T18:03:08;Sesame;e-services;Ton;2020-04-02T12:29:09;Declined;2020-04-03T00:18:13;2020-04-02T23:40:23
+4;2020-04-02T23:14:13;Groundnut;Kids back-end 4th generation;Quintal;2020-04-03T04:05:46;Pending;2020-04-02T11:40:20;2020-04-02T22:11:05
+5;2020-04-02T17:47:54;Paddy;Kentucky maximized;Quintal;2020-04-03T02:23:13;Approved;2020-04-02T12:21:29;2020-04-02T11:26:46
+6;2020-04-02T09:57:23;GreenGram;Concrete;Bag;2020-04-03T03:41:05;Pending;2020-04-02T14:41:39;2020-04-02T09:30:23
+7;2020-04-03T03:53:28;Cotton;Sports;Bag;2020-04-03T00:56:26;Approved;2020-04-03T03:08:14;2020-04-03T00:06:22
+8;2020-04-02T12:02:12;MaizeOrCorn;Lead Personal Loan Account Checking Account;Ton;2020-04-02T05:23:22;Pending;2020-04-03T02:12:10;2020-04-02T12:15:58
+9;2020-04-02T06:39:01;Castor;deposit Central African Republic;Quintal;2020-04-03T00:17:48;Declined;2020-04-02T16:50:29;2020-04-02T20:02:25
+10;2020-04-02T10:15:47;Castor;Sleek Wooden Towels Clothing;Ton;2020-04-02T16:17:14;Approved;2020-04-03T02:23:34;2020-04-02T18:05:03

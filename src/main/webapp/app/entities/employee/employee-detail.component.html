@@ -1,0 +1,75 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="employee">
+            <h2><span>Employee</span> {{employee.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Title</span></dt>
+                <dd>
+                    <span>{{employee.title}}</span>
+                </dd>
+                <dt><span>Name</span></dt>
+                <dd>
+                    <span>{{employee.name}}</span>
+                </dd>
+                <dt><span>Gender</span></dt>
+                <dd>
+                    <span>{{employee.gender}}</span>
+                </dd>
+                <dt><span>Employee Code</span></dt>
+                <dd>
+                    <span>{{employee.employeeCode}}</span>
+                </dd>
+                <dt><span>Phone Number</span></dt>
+                <dd>
+                    <span>{{employee.phoneNumber}}</span>
+                </dd>
+                <dt><span>Joiningdate</span></dt>
+                <dd>
+                    <span>{{employee.joiningdate}}</span>
+                </dd>
+                <dt><span>Date Of Birth</span></dt>
+                <dd>
+                    <span>{{employee.dateOfBirth}}</span>
+                </dd>
+                <dt><span>Designation</span></dt>
+                <dd>
+                    <span>{{employee.designation}}</span>
+                </dd>
+                <dt><span>Employee Type</span></dt>
+                <dd>
+                    <span>{{employee.employeeType}}</span>
+                </dd>
+                <dt><span>Adhaar Number</span></dt>
+                <dd>
+                    <span>{{employee.adhaarNumber}}</span>
+                </dd>
+                <dt><span>Pan</span></dt>
+                <dd>
+                    <span>{{employee.pan}}</span>
+                </dd>
+                <dt><span>Signiture</span></dt>
+                <dd>
+                    <span>{{employee.signiture}}</span>
+                </dd>
+                <dt><span>User</span></dt>
+                <dd>
+                    {{employee.userId}}
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/employee', employee.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

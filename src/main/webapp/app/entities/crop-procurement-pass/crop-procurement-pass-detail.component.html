@@ -1,0 +1,85 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="cropProcurementPass">
+            <h2><span>Crop Procurement Pass</span> {{cropProcurementPass.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Crop Date</span></dt>
+                <dd>
+                    <span>{{cropProcurementPass.cropDate}}</span>
+                </dd>
+                <dt><span>Crop Type</span></dt>
+                <dd>
+                    <span>{{cropProcurementPass.cropType}}</span>
+                </dd>
+                <dt><span>Expected Yeild</span></dt>
+                <dd>
+                    <span>{{cropProcurementPass.expectedYeild}}</span>
+                </dd>
+                <dt><span>Expected Yeild Units</span></dt>
+                <dd>
+                    <span>{{cropProcurementPass.expectedYeildUnits}}</span>
+                </dd>
+                <dt><span>Procurement Date</span></dt>
+                <dd>
+                    <span>{{cropProcurementPass.procurementDate}}</span>
+                </dd>
+                <dt><span>Pass Status</span></dt>
+                <dd>
+                    <span>{{cropProcurementPass.passStatus}}</span>
+                </dd>
+                <dt><span>Created At</span></dt>
+                <dd>
+                    <span>{{cropProcurementPass.createdAt}}</span>
+                </dd>
+                <dt><span>Modified At</span></dt>
+                <dd>
+                    <span>{{cropProcurementPass.modifiedAt}}</span>
+                </dd>
+                <dt><span>Procurement Center</span></dt>
+                <dd>
+                    <div *ngIf="cropProcurementPass.procurementCenterId">
+                        <a [routerLink]="['/procurement-center', cropProcurementPass.procurementCenterId, 'view']">{{cropProcurementPass.procurementCenterId}}</a>
+                    </div>
+                </dd>
+                <dt><span>Farmer</span></dt>
+                <dd>
+                    <div *ngIf="cropProcurementPass.farmerId">
+                        <a [routerLink]="['/farmer', cropProcurementPass.farmerId, 'view']">{{cropProcurementPass.farmerId}}</a>
+                    </div>
+                </dd>
+                <dt><span>Pass Approved By</span></dt>
+                <dd>
+                    <div *ngIf="cropProcurementPass.passApprovedById">
+                        <a [routerLink]="['/employee', cropProcurementPass.passApprovedById, 'view']">{{cropProcurementPass.passApprovedById}}</a>
+                    </div>
+                </dd>
+                <dt><span>Created By</span></dt>
+                <dd>
+                    <div *ngIf="cropProcurementPass.createdById">
+                        <a [routerLink]="['/employee', cropProcurementPass.createdById, 'view']">{{cropProcurementPass.createdById}}</a>
+                    </div>
+                </dd>
+                <dt><span>Modified By</span></dt>
+                <dd>
+                    <div *ngIf="cropProcurementPass.modifiedById">
+                        <a [routerLink]="['/employee', cropProcurementPass.modifiedById, 'view']">{{cropProcurementPass.modifiedById}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/crop-procurement-pass', cropProcurementPass.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

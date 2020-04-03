@@ -1,0 +1,104 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-employee-heading">Create or edit a Employee</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_title">Title</label>
+                    <select class="form-control" name="title" formControlName="title" id="field_title">
+                        <option value="Mr">Mr</option>
+                        <option value="Mrs">Mrs</option>
+                        <option value="Shri">Shri</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_name">Name</label>
+                    <input type="text" class="form-control" name="name" id="field_name"
+                           formControlName="name"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_gender">Gender</label>
+                    <select class="form-control" name="gender" formControlName="gender" id="field_gender">
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Others">Others</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_employeeCode">Employee Code</label>
+                    <input type="text" class="form-control" name="employeeCode" id="field_employeeCode"
+                           formControlName="employeeCode"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_phoneNumber">Phone Number</label>
+                    <input type="text" class="form-control" name="phoneNumber" id="field_phoneNumber"
+                           formControlName="phoneNumber"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_joiningdate">Joiningdate</label>
+                    <div class="d-flex">
+                        <input id="field_joiningdate" type="datetime-local" class="form-control" name="joiningdate" formControlName="joiningdate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_dateOfBirth">Date Of Birth</label>
+                    <div class="d-flex">
+                        <input id="field_dateOfBirth" type="datetime-local" class="form-control" name="dateOfBirth" formControlName="dateOfBirth" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_designation">Designation</label>
+                    <select class="form-control" name="designation" formControlName="designation" id="field_designation">
+                        <option value="AEO">AEO</option>
+                        <option value="DAO">DAO</option>
+                        <option value="AO">AO</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_employeeType">Employee Type</label>
+                    <select class="form-control" name="employeeType" formControlName="employeeType" id="field_employeeType">
+                        <option value="Permanent">Permanent</option>
+                        <option value="Contract">Contract</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_adhaarNumber">Adhaar Number</label>
+                    <input type="text" class="form-control" name="adhaarNumber" id="field_adhaarNumber"
+                           formControlName="adhaarNumber"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_pan">Pan</label>
+                    <input type="text" class="form-control" name="pan" id="field_pan"
+                           formControlName="pan"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_signiture">Signiture</label>
+                    <input type="text" class="form-control" name="signiture" id="field_signiture"
+                           formControlName="signiture"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_user">User</label>
+                    <select class="form-control" id="field_user" name="user" formControlName="userId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="userOption.id" *ngFor="let userOption of users; trackBy: trackUserById">{{userOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,87 @@
+{
+    "name": "CropProcurementPass",
+    "fields": [
+        {
+            "fieldName": "cropDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "cropType",
+            "fieldType": "CropType",
+            "fieldValues": "Paddy,MaizeOrCorn,JowarOrSorghum,Cotton,Castor,Groundnut,Soyabean,RedGram,GreenGram,BlackGram,Sesame"
+        },
+        {
+            "fieldName": "expectedYeild",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "expectedYeildUnits",
+            "fieldType": "ExpectedYieldUnit",
+            "fieldValues": "Bag,Quintal,Ton"
+        },
+        {
+            "fieldName": "procurementDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "passStatus",
+            "fieldType": "PassStatus",
+            "fieldValues": "Approved,Pending,Declined"
+        },
+        {
+            "fieldName": "createdAt",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "modifiedAt",
+            "fieldType": "Instant"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "procurementCenter",
+            "otherEntityRelationshipName": "cropProcurementPass",
+            "relationshipName": "procurementCenter",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "farmer",
+            "otherEntityRelationshipName": "cropProcurementPass",
+            "relationshipName": "farmer",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "employee",
+            "otherEntityRelationshipName": "cropProcurementPass",
+            "relationshipName": "passApprovedBy",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "employee",
+            "otherEntityRelationshipName": "cropProcurementPass",
+            "relationshipName": "createdBy",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "employee",
+            "otherEntityRelationshipName": "cropProcurementPass",
+            "relationshipName": "modifiedBy",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200403040703",
+    "entityTableName": "crop_procurement_pass",
+    "dto": "mapstruct",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

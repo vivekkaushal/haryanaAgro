@@ -1,0 +1,77 @@
+{
+    "name": "Employee",
+    "fields": [
+        {
+            "fieldName": "title",
+            "fieldType": "Title",
+            "fieldValues": "Mr,Mrs,Shri"
+        },
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "gender",
+            "fieldType": "Gender",
+            "fieldValues": "Male,Female,Others"
+        },
+        {
+            "fieldName": "employeeCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "phoneNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "joiningdate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "dateOfBirth",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "designation",
+            "fieldType": "Designation",
+            "fieldValues": "AEO,DAO,AO"
+        },
+        {
+            "fieldName": "employeeType",
+            "fieldType": "EmployeeType",
+            "fieldValues": "Permanent,Contract"
+        },
+        {
+            "fieldName": "adhaarNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "pan",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "signiture",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "user",
+            "otherEntityRelationshipName": "employee",
+            "relationshipName": "user",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20200403040659",
+    "entityTableName": "employee",
+    "dto": "mapstruct",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

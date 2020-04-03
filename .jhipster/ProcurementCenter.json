@@ -1,0 +1,41 @@
+{
+    "name": "ProcurementCenter",
+    "fields": [
+        {
+            "fieldName": "state",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "district",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tehsil",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "village",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "centerType",
+            "fieldType": "CenterType",
+            "fieldValues": "Godown,ColdStorage,Warehouse"
+        },
+        {
+            "fieldName": "centerIdentificationNumber",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20200403040702",
+    "entityTableName": "procurement_center",
+    "dto": "mapstruct",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

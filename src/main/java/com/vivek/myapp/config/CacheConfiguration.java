@@ -45,6 +45,11 @@ public class CacheConfiguration {
             createCache(cm, com.vivek.myapp.domain.User.class.getName());
             createCache(cm, com.vivek.myapp.domain.Authority.class.getName());
             createCache(cm, com.vivek.myapp.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.vivek.myapp.domain.Employee.class.getName());
+            createCache(cm, com.vivek.myapp.domain.Location.class.getName());
+            createCache(cm, com.vivek.myapp.domain.Farmer.class.getName());
+            createCache(cm, com.vivek.myapp.domain.ProcurementCenter.class.getName());
+            createCache(cm, com.vivek.myapp.domain.CropProcurementPass.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

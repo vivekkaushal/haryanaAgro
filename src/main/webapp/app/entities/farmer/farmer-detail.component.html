@@ -1,0 +1,123 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="farmer">
+            <h2><span>Farmer</span> {{farmer.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Title</span></dt>
+                <dd>
+                    <span>{{farmer.title}}</span>
+                </dd>
+                <dt><span>Name</span></dt>
+                <dd>
+                    <span>{{farmer.name}}</span>
+                </dd>
+                <dt><span>Gender</span></dt>
+                <dd>
+                    <span>{{farmer.gender}}</span>
+                </dd>
+                <dt><span>Farmer Type</span></dt>
+                <dd>
+                    <span>{{farmer.farmerType}}</span>
+                </dd>
+                <dt><span>Adhaar Number</span></dt>
+                <dd>
+                    <span>{{farmer.adhaarNumber}}</span>
+                </dd>
+                <dt><span>Pan</span></dt>
+                <dd>
+                    <span>{{farmer.pan}}</span>
+                </dd>
+                <dt><span>Phone Number</span></dt>
+                <dd>
+                    <span>{{farmer.phoneNumber}}</span>
+                </dd>
+                <dt><span>Signiture</span></dt>
+                <dd>
+                    <span>{{farmer.signiture}}</span>
+                </dd>
+                <dt><span>Address</span></dt>
+                <dd>
+                    <span>{{farmer.address}}</span>
+                </dd>
+                <dt><span>House Number</span></dt>
+                <dd>
+                    <span>{{farmer.houseNumber}}</span>
+                </dd>
+                <dt><span>Street</span></dt>
+                <dd>
+                    <span>{{farmer.street}}</span>
+                </dd>
+                <dt><span>Landmark</span></dt>
+                <dd>
+                    <span>{{farmer.landmark}}</span>
+                </dd>
+                <dt><span>Village</span></dt>
+                <dd>
+                    <span>{{farmer.village}}</span>
+                </dd>
+                <dt><span>Tehsil</span></dt>
+                <dd>
+                    <span>{{farmer.tehsil}}</span>
+                </dd>
+                <dt><span>District</span></dt>
+                <dd>
+                    <span>{{farmer.district}}</span>
+                </dd>
+                <dt><span>Pincode</span></dt>
+                <dd>
+                    <span>{{farmer.pincode}}</span>
+                </dd>
+                <dt><span>Khata Number</span></dt>
+                <dd>
+                    <span>{{farmer.khataNumber}}</span>
+                </dd>
+                <dt><span>Survey Number</span></dt>
+                <dd>
+                    <span>{{farmer.surveyNumber}}</span>
+                </dd>
+                <dt><span>Bankbook Scan Image Url</span></dt>
+                <dd>
+                    <span>{{farmer.bankbookScanImageUrl}}</span>
+                </dd>
+                <dt><span>Account Holder Name As Per Bank</span></dt>
+                <dd>
+                    <span>{{farmer.accountHolderNameAsPerBank}}</span>
+                </dd>
+                <dt><span>Account Number</span></dt>
+                <dd>
+                    <span>{{farmer.accountNumber}}</span>
+                </dd>
+                <dt><span>Ifsc</span></dt>
+                <dd>
+                    <span>{{farmer.ifsc}}</span>
+                </dd>
+                <dt><span>Bank Name</span></dt>
+                <dd>
+                    <span>{{farmer.bankName}}</span>
+                </dd>
+                <dt><span>Branch</span></dt>
+                <dd>
+                    <span>{{farmer.branch}}</span>
+                </dd>
+                <dt><span>User</span></dt>
+                <dd>
+                    {{farmer.userId}}
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/farmer', farmer.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

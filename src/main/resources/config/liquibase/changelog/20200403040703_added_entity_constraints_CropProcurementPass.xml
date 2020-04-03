@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity CropProcurementPass.
+    -->
+    <changeSet id="20200403040703-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="procurement_center_id"
+                                 baseTableName="crop_procurement_pass"
+                                 constraintName="fk_crop_procurement_pass_procurement_center_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="procurement_center"/>
+
+        <addForeignKeyConstraint baseColumnNames="farmer_id"
+                                 baseTableName="crop_procurement_pass"
+                                 constraintName="fk_crop_procurement_pass_farmer_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="farmer"/>
+
+        <addForeignKeyConstraint baseColumnNames="pass_approved_by_id"
+                                 baseTableName="crop_procurement_pass"
+                                 constraintName="fk_crop_procurement_pass_pass_approved_by_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="employee"/>
+
+        <addForeignKeyConstraint baseColumnNames="created_by_id"
+                                 baseTableName="crop_procurement_pass"
+                                 constraintName="fk_crop_procurement_pass_created_by_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="employee"/>
+
+        <addForeignKeyConstraint baseColumnNames="modified_by_id"
+                                 baseTableName="crop_procurement_pass"
+                                 constraintName="fk_crop_procurement_pass_modified_by_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="employee"/>
+
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,143 @@
+entity Employee{
+title Title,
+name String,
+gender Gender,
+employeeCode String,
+phoneNumber String,
+joiningdate Instant,
+dateOfBirth Instant,
+designation Designation,
+employeeType EmployeeType,
+adhaarNumber String,
+pan String,
+signiture String
+}
+
+entity Location {
+	state String,
+    district String,
+    tehsil String,
+    village String,
+    pincode String
+}
+
+entity Farmer {
+title Title,
+name String,
+gender Gender,
+farmerType FarmingType,
+adhaarNumber String,
+pan String,
+phoneNumber String,
+signiture String,
+address String,
+houseNumber String,
+street String,
+landmark String,
+village String,
+tehsil String,
+district String,
+pincode String,
+khataNumber String,
+surveyNumber String,
+bankbookScanImageUrl String,
+accountHolderNameAsPerBank String, 
+accountNumber String,
+ifsc String,
+bankName String,
+branch String
+}
+
+entity ProcurementCenter{
+state String,
+district String,
+tehsil String,
+village String,
+centerType CenterType,
+centerIdentificationNumber String
+}
+
+entity CropProcurementPass{
+	cropDate Instant,
+    cropType CropType,
+    expectedYeild String,
+    expectedYeildUnits ExpectedYieldUnit,
+    procurementDate Instant,
+    passStatus PassStatus,
+    createdAt Instant,
+    modifiedAt Instant
+}
+
+enum PassStatus{
+	Approved, Pending, Declined
+}
+
+enum CropType{
+	Paddy, MaizeOrCorn, JowarOrSorghum, Cotton, Castor, Groundnut, Soyabean, RedGram, GreenGram, BlackGram, Sesame
+}
+
+enum ExpectedYieldUnit{
+	Bag, Quintal, Ton
+}
+
+enum CenterType{
+	Godown, ColdStorage, Warehouse 
+}
+
+enum Title{
+Mr, Mrs, Shri
+}
+
+enum Gender{
+Male, Female, Others
+}
+
+enum FarmingType{
+ Lease, Self
+}
+
+enum EmployeeType{
+	Permanent, Contract
+}
+
+enum Designation {
+	AEO, DAO, AO
+}
+
+
+relationship ManyToOne {
+	CropProcurementPass{procurementCenter} to ProcurementCenter
+}
+
+relationship ManyToOne {
+	CropProcurementPass{Farmer} to Farmer
+}
+
+relationship ManyToOne {
+	CropProcurementPass{passApprovedBy} to Employee
+}
+
+relationship ManyToOne {
+	CropProcurementPass{createdBy} to Employee
+}
+
+relationship ManyToOne {
+	CropProcurementPass{modifiedBy} to Employee
+}
+
+relationship OneToOne{
+    Farmer{user} to User
+    Employee{user} to User
+}
+
+// Set pagination options
+paginate Employee, Location, Farmer, ProcurementCenter, CropProcurementPass with infinite-scroll
+
+// Use Data Transfert Objects (DTO)
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl except Location
+
+// Set an angular suffix
+// angularSuffix * with mySuffix

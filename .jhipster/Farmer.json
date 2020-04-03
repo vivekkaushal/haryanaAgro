@@ -1,0 +1,124 @@
+{
+    "name": "Farmer",
+    "fields": [
+        {
+            "fieldName": "title",
+            "fieldType": "Title",
+            "fieldValues": "Mr,Mrs,Shri"
+        },
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "gender",
+            "fieldType": "Gender",
+            "fieldValues": "Male,Female,Others"
+        },
+        {
+            "fieldName": "farmerType",
+            "fieldType": "FarmingType",
+            "fieldValues": "Lease,Self"
+        },
+        {
+            "fieldName": "adhaarNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "pan",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "phoneNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "signiture",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "address",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "houseNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "street",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "landmark",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "village",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tehsil",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "district",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "pincode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "khataNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "surveyNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "bankbookScanImageUrl",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "accountHolderNameAsPerBank",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "accountNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "ifsc",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "bankName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "branch",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "user",
+            "otherEntityRelationshipName": "farmer",
+            "relationshipName": "user",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20200403040701",
+    "entityTableName": "farmer",
+    "dto": "mapstruct",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}
